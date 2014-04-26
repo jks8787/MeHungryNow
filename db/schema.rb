@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426162456) do
+ActiveRecord::Schema.define(version: 20140426170925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cookbooks", force: true do |t|
+    t.integer  "users_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cookbooks", ["users_id"], name: "index_cookbooks_on_users_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "goal_type"
