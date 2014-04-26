@@ -1,0 +1,9 @@
+<% if @error %>
+  <p><%= @error %></p>
+<% end %>
+
+<% if @contacts.present? %>
+  <% @contacts.each do |contact| %>
+    <p>Contact name: <%= "#{contact.first_name} #{contact.last_name}" %></p>
+  <% end %>
+<% end %>
