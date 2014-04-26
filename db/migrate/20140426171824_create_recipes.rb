@@ -3,9 +3,8 @@ class CreateRecipes < ActiveRecord::Migration
     create_table :recipes do |t|
       t.string :title
       t.text :imageurl
-      t.text :ingeredientlist
+      t.text :ingredientlist
       t.string :yummlyid
-      t.references :cookbooks, index: true
     end
   end
 end
