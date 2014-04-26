@@ -15,13 +15,17 @@ class EmailsController < ApplicationController
       response = @oauth.get_access_token(@code)
       if response.present?
         token = response['access_token']
-        cc = ConstantContact::Api.new('your api key')
+        cc = ConstantContact::Api.new(ENV['constant_contact_key'])
         @contacts = cc.get_contacts(token)
       end
     else
       # if not code param is provided redirect into the OAuth flow
       redirect_to @oauth.get_authorization_url and return
     end
+  end
+
+  def post_contact
+    redirect_to "users/sign_up"
   end
 
 end
