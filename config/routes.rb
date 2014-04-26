@@ -3,6 +3,7 @@ MeHungryNow::Application.routes.draw do
   root to: 'home#index'
 
   get '/getkey', to: 'emails#get_key'
+  get '/users/fit_goals', to: 'users#fit_goals', as: 'fit_goals'
 
   resources :cookbooks
 end

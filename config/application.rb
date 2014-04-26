@@ -25,10 +25,5 @@ module MeHungryNow
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    ConstantContact::Util::Config.configure do |config|
-      config[:auth][:api_key] = ENV['constant_contact_key'] 
-      config[:auth][:api_secret] = ENV['constant_contact_secret']
-      config[:auth][:redirect_uri] = ENV['constant_contact_redirect'] 
-    end
   end
 end
