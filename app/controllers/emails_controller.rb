@@ -17,6 +17,7 @@ class EmailsController < ApplicationController
         token = response['access_token']
         cc = ConstantContact::Api.new(ENV['constant_contact_key'])
         @contacts = cc.get_contacts(token)
+        
       end
     else
       # if not code param is provided redirect into the OAuth flow

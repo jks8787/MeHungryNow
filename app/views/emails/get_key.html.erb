@@ -2,8 +2,11 @@
   <p><%= @error %></p>
 <% end %>
 
+
 <% if @contacts.present? %>
-  <% @contacts.each do |contact| %>
-    <p>Contact name: <%= "#{contact.first_name} #{contact.last_name}" %></p>
+  <% @contacts.results.each do |contact| %>
+    <p>Contact email: <%= "#{contact.email_addresses[0].email_address}" %></p>
   <% end %>
 <% end %>
+
+<%= debug @contacts %>
