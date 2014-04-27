@@ -4,6 +4,7 @@ development:
   encoding: unicode
   database: MeHungryNow_development
   pool: 5
+  username: traviata
 
 test:
   adapter: postgresql
