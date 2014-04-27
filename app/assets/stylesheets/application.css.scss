@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+ @import "bootstrap";
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
@@ -19,7 +21,7 @@ body {
   cursor: default;
 }
 
-span.glyphicon {
+i.glyphicon {
     font-size: 5em;
 }
 

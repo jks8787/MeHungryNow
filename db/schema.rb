@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 20140426203744) do
   enable_extension "plpgsql"
 
   create_table "cookbooks", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "users_id"
+    t.integer  "recipes_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "cookbooks", ["user_id"], name: "index_cookbooks_on_user_id", using: :btree
+  add_index "cookbooks", ["recipes_id"], name: "index_cookbooks_on_recipes_id", using: :btree
+  add_index "cookbooks", ["users_id"], name: "index_cookbooks_on_users_id", using: :btree
 
   create_table "cookbooks_recipes", id: false, force: true do |t|
     t.integer "cookbook_id", null: false
@@ -33,11 +35,14 @@ ActiveRecord::Schema.define(version: 20140426203744) do
   add_index "cookbooks_recipes", ["recipe_id", "cookbook_id"], name: "index_cookbooks_recipes_on_recipe_id_and_cookbook_id", using: :btree
 
   create_table "recipes", force: true do |t|
-    t.string "title"
-    t.text   "imageurl"
-    t.text   "ingredientlist"
-    t.string "yummlyid"
+    t.string  "title"
+    t.text    "imageurl"
+    t.text    "ingeredientlist"
+    t.string  "yummlyid"
+    t.integer "cookbooks_id"
   end
+
+  add_index "recipes", ["cookbooks_id"], name: "index_recipes_on_cookbooks_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "goal_type"
