@@ -4,7 +4,9 @@
   <h1>Eat like an athlete.</h1>
   <p>
     They say six-pack abs are made in the kitchen, but how do you know what to eat when? Meal planning and reminders by Me Hungry Now helps stick to a healthy lifestyle!</p>
-  <p><a class="btn btn-primary btn-lg" role="button">SIGN UP</a></p>
+    <% if !user_signed_in? %>
+      <p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+    <% end %>
   </section>
 </div>
 
