@@ -3,27 +3,28 @@
   <section class="blurb col-xs-5">
   <h1>Eat like an athlete.</h1>
   <p>
-    They say six-pack abs are made in the kitchen, but how do you know what to eat when? Meal planning and reminders by Me Hungry Now helps stick to a healthy lifestyle!</p>
+    They say six-pack abs are made in the kitchen, but how do you know what to eat when? Meal planning and reminders by Me Hungry Now helps you stick with a healthy lifestyle.</p>
     <% if !user_signed_in? %>
       <p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
     <% end %>
   </section>
 </div>
 
-<div class="row">
+<div class="row" id="about">
   <div class="col-sm-4 text-center">
     <i class="glyphicon glyphicon-envelope"></i>
     <h3>Sign up</h3>
-    <p>All you need to start eating like an athlete is an email address (and a password). No muss, no fuss.</p>
+    <p class="steps">All you need to start eating like an athlete is an email address (and a password).</p>
+    <p><%= link_to "Get started!", new_user_registration_path %></p>
   </div>
   <div class="col-sm-4 text-center">
     <i class="glyphicon glyphicon-user"></i>
     <h3>Fill out</h3>
-    <p>Trying to bulk up? Lose weight? Train for a marathon? Enter your fitness goals so Me So Hungry can feed your needs.</p>
+    <p class="steps">Trying to bulk up? Lose weight? Train for a marathon? Enter your fitness goals so Me Hungry Now can feed your needs.</p>
   </div>
   <div class="col-sm-4 text-center">
     <i class="glyphicon glyphicon-thumbs-up"></i>
     <h3>Chow down</h3>
-    <p>Start receiving meal plans tailored to your personal nutrition goals. Grab the included shopping list, and head to the store!</p>
+    <p class="steps">Start receiving meal plans tailored to your personal nutrition goals. Grab the included shopping list, and head to the store!</p>
   </div>
 </div>

@@ -9,6 +9,10 @@ body {
   cursor: default;
 }
 
+.navbar {
+  border-radius: 0 0 6px 6px;
+}
+
 i.glyphicon {
     font-size: 2em;
 }
@@ -45,4 +49,13 @@ i.glyphicon {
   height: 200px;
   width: 200px;
   text-align: center;
+
+.steps {
+  padding: 0 50px;
+}
+
+footer {
+  width: 100%;
+  margin: 15px;
+  padding: 15px;
 }

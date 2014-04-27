@@ -24,8 +24,12 @@
 
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav">
+<<<<<<< HEAD
         <li><a href="#">How It Works</a></li>
         <li><%= link_to "See Sample Recipes", cookbooks_path %></li>
+=======
+        <li><a href="#about">How It Works</a></li>
+>>>>>>> bd42e23ebe2220a17bf8c128217385efc189eeb0
         </ul>
       <% if user_signed_in? %>
       <ul class="nav navbar-nav"><li><%= link_to "Update Goals", fit_goals_path %>
@@ -51,6 +55,11 @@
 <% end %>
 
 <%= yield %>
+
+<footer class="clearfix">
+  <div class="col-sm-12">
+  <h6 class="pull-right">by Thundercats Against the Patriarchy</h6>
+</footer>
 
 <script src="/assets/bootstrap.min.js"></script>
 </div>
