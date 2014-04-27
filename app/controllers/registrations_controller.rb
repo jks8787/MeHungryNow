@@ -32,7 +32,7 @@
 
         ##### END CONSTANT CONTACT API INTEGRATION #####
         cc = ConstantContact::Api.new(ENV['constant_contact_key'])
-        new_email = "username7@example.com"
+        new_email = params[:user][:email]
         contact = {
                     lists: [
                       {
