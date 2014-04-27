@@ -11,3 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  cursor: default;
+}
+
+span.glyphicon {
+    font-size: 5em;
+}
+
+.jumbotron {
+  background: url(http://placehold.it/1024x664&text=hero+image) center center no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.blurb {
+  background: rgba(255,255,255,.8);
+  margin: 0 auto;
+  padding: 4%;
+  float: left;
+  box-shadow: 0 0 5px rgba(0,0,0,.75);
+}
