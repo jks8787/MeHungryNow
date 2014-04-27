@@ -22,11 +22,12 @@ body {
 }
 
 i.glyphicon {
-    font-size: 5em;
+    font-size: 2em;
 }
 
 .jumbotron {
-  background: url(http://placehold.it/1024x664&text=hero+image) center center no-repeat;
+  background: url('plums.jpg')
+  center center no-repeat;
   background-size: cover;
   overflow: hidden;
 }
