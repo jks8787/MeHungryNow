@@ -1,6 +1,16 @@
-class Devise::RegistrationsController < DeviseController
+ class RegistrationsController < Devise::RegistrationsController
   prepend_before_filter :require_no_authentication, only: [ :new, :create, :cancel ]
   prepend_before_filter :authenticate_scope!, only: [:edit, :update, :destroy]
+
+  def fit_goals
+  end
+
+  def set_fit_goals
+    user = User.find(current_user.id)
+    goal_type_for_user = params[:fit_goal]
+    user.goal_type = goal_type_for_user
+    render json: @user
+  end
 
   # GET /resource/sign_up
   def new
