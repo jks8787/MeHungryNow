@@ -1,0 +1,15 @@
+<% if @error %>
+  <p><%= @error %></p>
+<% end %>
+
+<h2>Single contact</h2>
+<% if @contact.present? %>
+  <%= debug @contact %>
+<% end %>
+
+<h2>Contacts List</h2>
+<% if @contacts.present? %>
+  <%= debug @contacts %>
+<% end %>
+
+

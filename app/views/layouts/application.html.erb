@@ -10,7 +10,7 @@
   <link href="/assets/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
-<!-- <div class="container"> -->
+<div class="container">
 <header>
 <% if notice %>
      <p class="notice alert alert-success"><%= notice %></p>
@@ -50,17 +50,12 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </div>
-
 </header>
 
 <%= yield %>
 
-
-<button id="fit-goals">Update Fit Goals?</button>
-
-
-
+<%= link_to "Up Date Your Fit Goals?", fit_goals_path %>
 <script src="/assets/bootstrap.min.js"></script>
-<!-- </div> -->
+</div>
 </body>
 </html>
