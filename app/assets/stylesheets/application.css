@@ -36,3 +36,9 @@ span.glyphicon {
   float: left;
   box-shadow: 0 0 5px rgba(0,0,0,.75);
 }
+
+.btn-xl {
+  padding: 28px 22px;
+  font-weight: bold;
+  font-size: 20px;
+}
