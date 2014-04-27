@@ -10,15 +10,6 @@
 <body>
 <div class="container">
 <header>
-<% if notice %>
-     <p class="notice alert alert-success"><%= notice %></p>
-   <%end%>
-   <% if alert %>
-    <p class="alert alert alert-danger"><%= alert %></p>
-   <% end %>
-
-    <h1>Me Hungry Now</h1>
-
 <div class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -48,6 +39,12 @@
   </div><!-- /.container-fluid -->
 </div>
 </header>
+<% if notice %>
+  <p class="notice alert alert-success"><%= notice %></p>
+<%end%>
+<% if alert %>
+  <p class="alert alert alert-danger"><%= alert %></p>
+<% end %>
 
 <%= yield %>
 
