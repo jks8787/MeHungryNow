@@ -24,6 +24,7 @@ class EmailsController < ApplicationController
     #   redirect_to @oauth.get_authorization_url and return
     # end
     cc = ConstantContact::Api.new(ENV['constant_contact_key'])
+    new_email = "username7@example.com"
     contact = {
                 lists: [
                   {
@@ -32,12 +33,27 @@ class EmailsController < ApplicationController
                 ],
                 email_addresses: [
                   {
-                  email_address: "username5@example.com"
+                  email_address: new_email
                   }
                 ]
               }
-    @contact = cc.add_contact(ENV['constant_contact_token'], contact, false)
-    @contacts = cc.get_contacts(ENV['constant_contact_token'])
+
+    emails = cc.get_contacts(ENV['constant_contact_token']).results
+    emails.map! { |c| c = c.email_addresses[0].email_address }
+
+    duplicate_email = false
+    emails.each do |email|
+      if(new_email == email)
+        duplicate_email = true
+      end
+    end
+
+    @contact = nil
+    if !duplicate_email
+      @contact = cc.add_contact(ENV['constant_contact_token'], contact, false)
+    else
+      @error = "This email was already taken!"
+    end
 
     #render "emails/posted_contact"
   end
