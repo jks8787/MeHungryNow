@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
@@ -35,4 +37,11 @@ span.glyphicon {
   padding: 4%;
   float: left;
   box-shadow: 0 0 5px rgba(0,0,0,.75);
+}
+
+.btn-xl {
+  padding: 30px 43px;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 20px;
 }
