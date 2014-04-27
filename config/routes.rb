@@ -3,6 +3,7 @@ MeHungryNow::Application.routes.draw do
 
   as :user do
     get '/users/fit_goals', to: 'registrations#fit_goals', as: 'fit_goals'
+    put '/registrations/set_fit_goals', to: 'registrations#set_fit_goals'
   end
 
   root to: 'home#index'

@@ -6,9 +6,10 @@
   end
 
   def set_fit_goals
-    user = User.find(current_user.id)
+    @user = User.find(current_user.id)
     goal_type_for_user = params[:fit_goal]
-    user.goal_type = goal_type_for_user
+    @user.goal_type = goal_type_for_user
+    @user.save
     render json: @user
   end
 

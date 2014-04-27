@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: "PUT",
-      url: '/users/update',
+      url: '/registrations/set_fit_goals',
       data: {fit_goal: $button.id },
       dataType: 'json',
       })
