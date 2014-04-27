@@ -29,6 +29,42 @@
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
+
+        ##### END CONSTANT CONTACT API INTEGRATION #####
+        cc = ConstantContact::Api.new(ENV['constant_contact_key'])
+        new_email = "username7@example.com"
+        contact = {
+                    lists: [
+                      {
+                      id: "1186006679"
+                      }
+                    ],
+                    email_addresses: [
+                      {
+                      email_address: new_email
+                      }
+                    ]
+                  }
+
+        emails = cc.get_contacts(ENV['constant_contact_token']).results
+        emails.map! { |c| c = c.email_addresses[0].email_address }
+
+        duplicate_email = false
+        emails.each do |email|
+          if(new_email == email)
+            duplicate_email = true
+          end
+        end
+
+        @contact = nil
+        if !duplicate_email
+          @contact = cc.add_contact(ENV['constant_contact_token'], contact, false)
+        else
+          @error = "This email was already taken!"
+        end
+
+        ##### END CONSTANT CONTACT API INTEGRATION #####
+
         respond_with resource, location: after_sign_up_path_for(resource)
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?

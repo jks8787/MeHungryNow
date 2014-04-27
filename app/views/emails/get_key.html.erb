@@ -3,13 +3,15 @@
 <% end %>
 
 <h2>Single contact</h2>
-<% if @contact.present? %>
+<% if @contact %>
   <%= debug @contact %>
 <% end %>
 
 <h2>Contacts List</h2>
 <% if @contacts.present? %>
-  <%= debug @contacts %>
+  <% @contacts.each do |contact| %>
+    <%= contact %> 
+  <% end %>
 <% end %>
 
 
